@@ -1,0 +1,9 @@
+# PSAQ — root security rules (Phase 1)
+
+# Never let Apache print a directory listing.
+Options -Indexes
+
+# Deny direct access to dotfiles (.htaccess, .env, .git, etc.).
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
